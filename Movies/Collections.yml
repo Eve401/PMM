@@ -1,0 +1,53 @@
+# Collection Templates
+templates:
+  tmdb:
+    optional:
+      - collections
+      - lists
+      - movies
+      - tmdb_summary
+      - summary
+    tmdb_collection: <<collections>>
+    tmdb_list: <<lists>>
+    tmdb_movie: <<movies>>
+    tmdb_summary: <<tmdb_summary>>
+    summary: <<summary>>
+#    url_poster: <<poster>>
+    sort_title: <<collection_name>>
+    collection_order: release
+  imdb:
+#    url_poster: <<poster>>
+    summary: <<summary>>
+    sync_mode: sync
+  Holiday:
+    url_poster: <<poster>>
+    sort_title: <<collection_name>>
+    collection_order: release
+    
+collections:
+    Disney Live-Action:
+        trakt_list: https://trakt.tv/users/donxy/lists/disney-live-action-movies
+        collection_order: custom
+        sync_mode: sync
+        item_assets: true
+    Marvel Cinematic Universe:
+        trakt_list: https://trakt.tv/users/tetharion/lists/marvel-cinematic-universe
+        collection_order: custom
+        item_assets: true
+        sync_mode: sync
+    Illumination Entertainment:
+        collection_order: custom
+        sync_mode: sync
+        tmdb_discover:
+            sort_by: release_date.desc
+            with_companies: 6704
+            with_runtime.gte: 60
+        url_poster: https://theposterdb.com/api/assets/25722
+    The Bourne Collection:
+        template: {name: tmdb, collections: 31562, tmdb_summary: 31562, poster: https://theposterdb.com/api/assets/5420}
+    The Godfather:
+        tmdb_collection: 230
+        item_assets: true
+    Walt Disney Animation Studios:
+        template: {name: tmdb, lists: "7103807", summary: "A collection of Walt Disney Animation Studios movies."}
+        item_assets: true
