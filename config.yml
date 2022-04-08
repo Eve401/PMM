@@ -1,0 +1,175 @@
+## This file is a template remove the .template to use the file
+
+libraries:                                      # This is called out once within the config.yml file                                       
+  Movies:                                       # Each library must match the Plex library name
+    metadata_path:
+      - folder: config/Movies/
+    operations:
+      assets_for_all: false
+    settings:
+      asset_directory: config/assets/Movies
+      asset_folders: false
+  TV Shows:
+    metadata_path:                              #git: SiskoUrso/TV/Network
+#      - git: SiskoUrso/TV/Network
+      - folder: config/TV Shows/
+    sonarr:                                         # Can be individually specified per library as well
+      url: http://192.168.3.18:8989
+      token: 2eaa2365be9b4cb7b557926e1922595e
+      add_missing: false
+      add_existing: false
+      root_folder_path: /media/TV Shows
+      monitor: all
+      quality_profile: HD-1080p
+      language_profile: English
+      series_type: standard
+      season_folder: true
+      tag: pmm
+      search: false
+      cutoff_search: false
+      sonarr_path: /media/TV Shows
+      plex_path: /tv/TV Shows
+  Anime:
+    metadata_path:
+      - folder: config/Anime/
+    operations:
+      assets_for_all: true
+    settings:
+      asset_directory: config/assets/Anime
+      asset_folders: false
+    sonarr:                                         # Can be individually specified per library as well
+      url: http://192.168.3.18:8989
+      token: 2eaa2365be9b4cb7b557926e1922595e
+      add_missing: false
+      add_existing: false
+      root_folder_path: /media/Anime
+      monitor: all
+      quality_profile: HD-1080p
+      language_profile: English
+      series_type: standard
+      season_folder: true
+      tag: pmm
+      search: false
+      cutoff_search: false
+      sonarr_path: /media/Anime
+      plex_path: /tv/Anime
+  Music:
+    metadata_path:
+      - file: config/Music.yml
+playlist_files:
+  - file: config/playlists.yml
+  - git: meisnate12/Playlists
+settings:
+  cache: true
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: true
+  asset_depth: 1
+  create_asset_folders: false
+  dimensional_asset_rename: false
+  download_url_assets: false
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: append
+  minimum_items: 2
+  default_collection_order:
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_filtered: false
+  show_options: false
+  show_missing: true
+  show_missing_assets: true
+  save_missing: true
+  tvdb_language: eng
+  ignore_ids:
+  ignore_imdb_ids:
+  item_refresh_delay: 0
+  verify_ssl: true
+  custom_repo:
+  playlist_sync_to_users: all
+webhooks:                                       # Can be individually specified per library as well
+  error:
+  version:
+  run_start:
+  run_end:
+  changes:
+plex:                                           # Can be individually specified per library as well; REQUIRED for the script to run
+  url: http://192.168.3.18:32400
+  token: FrubU2H6qQFszm38zmoU
+  timeout: 60
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+tmdb:                                           # REQUIRED for the script to run
+  apikey: ecd99c3077cd418db644effb79c2ed0b
+  language: en
+  cache_expiration: 60
+  region:
+tautulli:                                       # Can be individually specified per library as well
+  url: http://192.168.3.18:8181
+  apikey: d7317e0f6e2e46dc9b8cddba632e1cf8
+omdb:
+  apikey:
+  cache_expiration: 60
+mdblist:
+  apikey:
+  cache_expiration: 60
+notifiarr:
+  apikey:
+anidb:                                          # Not required for AniDB builders unless you want mature content
+  username:
+  password:
+  language: en
+radarr:                                         # Can be individually specified per library as well
+  url: http://192.168.3.18:7878
+  token: 0ce5264578cd4f17be0d2c4a1034ed20
+  add_missing: false
+  add_existing: false
+  root_folder_path: /media
+  monitor: true
+  availability: released
+  quality_profile: HD-1080p
+  tag: pmm
+  search: false
+  radarr_path: /media
+  plex_path: /movies
+sonarr:                                         # Can be individually specified per library as well
+  url: http://192.168.3.18:8989
+  token: 2eaa2365be9b4cb7b557926e1922595e
+  add_missing: false
+  add_existing: false
+  root_folder_path:
+  monitor: all
+  quality_profile: HD-1080p
+  language_profile: English
+  series_type: standard
+  season_folder: true
+  tag: pmm
+  search: false
+  cutoff_search: false
+  sonarr_path:
+  plex_path:
+trakt:
+  client_id: 713f5e38a0c39166416d188fa5cec4e3c4d634b5ea60aeb238060111522976f5
+  client_secret: cdefeed34835e46d8262e943bd47df8e438f279891e3811a3af887e34964c761
+  pin:
+  authorization:
+    access_token: 4926db74f921034f5400e08d04cb9fd05a939c64b7d3625061a7839c22f5fb5d
+    token_type: Bearer
+    expires_in: 7889237
+    refresh_token: 6b81508a5b80efac7ed1b8f06865fd63be2196cb9a3bd08ef1065516ed860d1d
+    scope: public
+    created_at: 1648888685
+mal:
+  client_id: 6b588f88ca8317830562ed60b4331032
+  client_secret: dfb6828931ed79c268b5fd9195bd11a576fcc5c837e9a7db58c10d7f3ee5689c
+  authorization:
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBiNTQyOTYwODE0Y2E2ZjU0OTI0ZTRhMjdiOWFiMWZhNjAxNGZhYzIyNDVjOTdjNTgyMDVlNTM3YTY0Yzc0Y2Q5ZGVhMDljMzE1NTJlOTg3In0.eyJhdWQiOiI2YjU4OGY4OGNhODMxNzgzMDU2MmVkNjBiNDMzMTAzMiIsImp0aSI6IjBiNTQyOTYwODE0Y2E2ZjU0OTI0ZTRhMjdiOWFiMWZhNjAxNGZhYzIyNDVjOTdjNTgyMDVlNTM3YTY0Yzc0Y2Q5ZGVhMDljMzE1NTJlOTg3IiwiaWF0IjoxNjQ4OTI1OTY1LCJuYmYiOjE2NDg5MjU5NjUsImV4cCI6MTY1MTUxNzk2NSwic3ViIjoiMTQ4MDA0MjEiLCJzY29wZXMiOltdfQ.qGlNuCXPrMcX488Oh2KRNsZkbXWf3oCsK7rwc7Nlk-Gwh8tC8ruqI1mxMdWkY3IC8-3pD4JMooJp7LxzB3UXdGndR3ndCkJc2r6rc0lNn1lZUutDnjD2yg37LcpwyeeMhpsXSOx9mAQRfxSaMrkCcBISHuXOdsSn0ubAdb16BwJgfBpLdE3a_XwY8AcCylbZSkdhWTA6csG--8bh3Mi21W4qWSVAocVA7LpxoycG_vuahp-zaV241ntotBorI-ELb1lwea-ci3oV9heAL7PFrYjaMKZ6Ri4uG-ic44D6OhaAlPAyan7iPQXRgCT7Wyh1ICe6wOvoifztS-6ZaZeDfA
+    token_type: Bearer
+    expires_in: 2592000
+    refresh_token: def502009d384bfa011d2692e8a56c37ee34a8baefc2c888b611f9c9d48cc83329155888b4f655446dcfd942e75d8329d483c53fb3700aa5a1c3f8fb733270abf8d5cbb68fea8e63a9b8a1052048f2fee6ce709982b9d7e416d033a4b8ad0c263d0947d298e7c8e6888e637fa02d002a60c289803d07646436734bb01367e7d3f61ecaa8c48c0db0cc7fc1912c54880c31afbff4a99b637f715aab0cb845f64c053091a682bae9d1e8c81332fc1ec6d105e940454d4cf4bbb4a0642fb1e0f36ba2a0d2f82792c6496fadfa26246ae7d85200377532d15123857ecb9a78a37ac1bb2c3e54636a2b163366869066bef758a09fb3a520a0da50cb892f64b6bdbfca03ec0fc3ccb6a381b4b4832c4fed0caa523256e994f98dcc8185e4bc6f5fb68ff308b42a01f6c73668c36eb241b64f864523b0318a8a24af141a54b993fd4fca85309dac63a949b0f616f29782f28b6053b51b08020172cb358f754a45be7f7969e5fe51447c6eee063e17f9c5702ff892bde1c6f20e811207683f22e9cf4a95f94ca74f2a27833dd8
